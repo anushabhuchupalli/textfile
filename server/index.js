@@ -4,15 +4,16 @@ const cors = require('cors')
 const RegisterModel = require('./models/Register')
 
 const app = express()
-app.use(cors({
-    origin: ["*"],
-     methods: ["POST", "GET"],
-    credentials: true
-}))
-
+app.use(cors(
+    {
+        origin: ["https://deploy-mern-frontend.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
 app.use(express.json())
 
-mongoose.connect('mongodb://localhost:27017/test');
+mongoose.connect('mongodb+srv://yousaf:test123@cluster0.g4i5dey.mongodb.net/test?retryWrites=true&w=majority');
 
 
 app.get("/", (req, res) => {
@@ -33,6 +34,6 @@ app.post('/register', (req, res) => {
 })
 
 
-app.listen(5000, () => {
+app.listen(3001, () => {
     console.log("Server is Running")
 })
