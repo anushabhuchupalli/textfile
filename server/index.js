@@ -5,7 +5,7 @@ const RegisterModel = require('./models/Register')
 
 const app = express()
 app.use(cors({
-    origin: ["*"],
+    origin: ["http://textfilefrontend-nrkajjgrp-anushas-projects-e8744e15.vercel.app/"],
      methods: ["POST", "GET"],
     credentials: true
 }))
